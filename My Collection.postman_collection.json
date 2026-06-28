@@ -1,0 +1,486 @@
+{
+  "info": {
+    "_postman_id": "ad049308-079b-467b-abb2-c2b9b1f07932",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53436117",
+    "_collection_link": "https://go.postman.co/collection/53436117-ad049308-079b-467b-abb2-c2b9b1f07932?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Post data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"My First Post\",\n  \"link\": \"https://example.com\",\n  \"username\": \"alice\",\n  \"name\": \"Alice\",\n  \"text\": \"Hello world!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/posts/1/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts/1/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/posts/1/",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts/1/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/posts/1/comments/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts/1/comments/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts",
+            "1",
+            "comments",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/posts/1/comments/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"My First Post\",\n  \"link\": \"https://example.com\",\n  \"username\": \"alice\",\n  \"name\": \"Alice\",\n  \"text\": \"Hello world!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts/1/comments/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts",
+            "1",
+            "comments",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/posts/1/comments/0/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"upvotes\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/posts/1/comments/0/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "posts",
+            "1",
+            "comments",
+            "0",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"My Post\",\n  \"link\": \"https://example.com\",\n  \"username\": \"alice\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/1/comments/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Great post!\",\n  \"username\": \"bob\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/1/comments/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            "1",
+            "comments",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/1/comments/0/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Updated comment\",\n  \"upvotes\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/1/comments/0/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            "1",
+            "comments",
+            "0",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/?sort=increasing",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sort",
+              "value": "increasing"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/?sort=decreasing",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sort",
+              "value": "decreasing"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/1/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"upvotes\": 3\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/1/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://10.48.115.46:5000/api/extra/posts/1/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\",\n  \"link\": \"not-a-url\",\n  \"username\": \"alice\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://10.48.115.46:5000/api/extra/posts/1/",
+          "protocol": "http",
+          "host": [
+            "10",
+            "48",
+            "115",
+            "46"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "extra",
+            "posts",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
